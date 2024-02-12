@@ -84,7 +84,7 @@ body.dark-mode .dark {
     width: 100%;
     max-width: 1300px;
     position: fixed;
-    z-index: 2;
+    z-index: 9999;
     backdrop-filter: blur(10px);
 }
 
@@ -95,7 +95,7 @@ body.dark-mode .dark {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 2;
+    z-index: 9999;
     
     /* background-color: aqua; */
 }
@@ -109,14 +109,14 @@ body.dark-mode .dark {
     justify-content: center;
     border-radius: 12px;
     margin-left: 10px;
-    z-index: 999;
+    z-index: 9999;
 
 }
 
 .nav .logo img {
     width: 200px;
     height: auto;
-    z-index: 999;
+    z-index: 9999;
 
 }
 
@@ -139,7 +139,7 @@ body.dark-mode .dark {
     font-size: 18px;
     font-weight: 700;
     margin-right: 10px;
-    z-index: 999;
+    z-index: 9999;
 }
 
 .ancker {
@@ -202,6 +202,7 @@ body.dark-mode .dark {
     flex-direction: column;
     justify-content: center;
     padding: 0px 20px 0 10px;
+    z-index: 3;
 
 }
 
@@ -487,7 +488,7 @@ body.dark-mode .dark {
     align-items: center;
     justify-content: space-between;
     padding-top: 100px;
-    z-index: 2;
+    z-index: 3;
 }
 
 .section3 .box1 {
@@ -499,7 +500,7 @@ body.dark-mode .dark {
     flex-direction: column;
     justify-content: center;
     padding: 0px 20px 0 10px;
-    z-index: 1;
+    z-index: 3;
 }
 
 .section3 .box2 {
@@ -828,12 +829,14 @@ form .emailAndPhone {
     height: 100vh;
     background-color: rgba(255, 255, 255, 0);
     position: fixed;
-    z-index: 999;
+    z-index: 99999;
     overflow: hidden;
     backdrop-filter: blur(10px);
     float: right;
     padding:20px;
-    display: none;
+    display: none;  
+    transition: opacity 0.5s ease;
+
 }
 .mobileNav .link{
     width: 100%;
@@ -856,12 +859,27 @@ form .emailAndPhone {
     margin-right: 20px;
     height: fit-content;
 }
-
+.closeIcon{
+    width: 100%;
+    height:fit-content;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end
+}
 @media (max-width: 1120px) {
     .mobileNav {
+        opacity: 0;
         display:none;
         width: 300px;
-        right: 0px;
+        right: -20px;
+        padding: 20px;
+        transition: opacity 0.5s ease;
+    }
+    .mobileNav.fade_in {
+        opacity: 1;
+        display:block;
     }
     .menu{
         display: flex;
@@ -869,4 +887,60 @@ form .emailAndPhone {
     .navlinks{
         display: none;
     }
+    .section3{
+        flex-direction: column;
+    }
+    .section3 .box1{
+        width: 80%;
+        margin-bottom: 20px;
+
+    }
+    .section2{
+        margin-top: 20px;
+    }
+    .section3 .box2{
+        padding: 20px;
+        width: 80%;
+    }
+    .footer{
+        padding: 20px;
+    }
+    .footerdiv{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footerlinks {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 475px) {
+    h2, h3{
+        max-width: 100%;
+        font-size: 20px !important;
+    }
+    p, h4{
+        max-width: 100%;
+        font-size: 15px !important;
+    }
+    .section1 .box1{
+        height: fit-content;
+    }
+    .section1 .box2{
+        margin-top: 20px;
+        height: fit-content;
+    }
+    .section2 .box1 h3{
+        max-width: 100%;
+    }
+    .section3{
+        padding-top: 0px;
+    }
+ 
 }

@@ -21,6 +21,15 @@ var TrandingSlider = new Swiper('.slider', {
   });
 
   document.addEventListener('DOMContentLoaded', function () {
+    const mobileNav = document.getElementById('mobileNav');
+    const menu = document.getElementById('menu');
+    const close = document.getElementById('close');
+    menu.addEventListener('click' , function () {
+      mobileNav.classList.add('fade_in');
+    })
+    close.addEventListener('click' , function () {
+      mobileNav.classList.remove('fade_in');
+    })
     const darkModeToggle = document.getElementById('darkModeToggle');
     const body = document.body;
 
@@ -37,4 +46,5 @@ var TrandingSlider = new Swiper('.slider', {
         localStorage.setItem('darkMode', isDarkModeEnabled ? 'enabled' : 'disabled');
     });
 });
+
 
