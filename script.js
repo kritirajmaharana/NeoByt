@@ -30,12 +30,11 @@ var TrandingSlider = new Swiper('.slider', {
         body.classList.add('dark-mode');
     }
 
-    // Toggle dark mode on button click
     darkModeToggle.addEventListener('click', function () {
         body.classList.toggle('dark-mode');
         const isDarkModeEnabled = body.classList.contains('dark-mode');
 
-        // Store user's preference in localStorage
         localStorage.setItem('darkMode', isDarkModeEnabled ? 'enabled' : 'disabled');
     });
 });
+
